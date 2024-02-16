@@ -1,14 +1,16 @@
 # Load libraries
-
 library(vcfR)
 library(ggplot2)
 
 # Open vcf with missense variants annotated with VEP from the 1000 Genomes Project 
-vcf <- read.vcfR('./Autosomal_RC_OxPhos_phase3_1kGP_missense.vcf.gz')
+vcf <- read.vcfR(<'path_to_/Autosomal_RC_OxPhos_phase3_1kGP_missense.vcf.gz'>)
+
 # Get genotypes
 gt=vcf@gt[,-1]
+
 # Get variant coordinates and information
 variants=data.frame(vcf@fix[,c(1,2,4,5)])
+
 # Extract information from VEP annotations
 CSQ=extract.info(vcf,"CSQ")
 variants$Consequence=sapply(CSQ, function(x){strsplit(x,'|',fixed=T)[[1]][2]})
@@ -16,8 +18,9 @@ variants$Gene=sapply(CSQ, function(x){strsplit(x,'|',fixed=T)[[1]][5]})
 variants$SYMBOL=sapply(CSQ, function(x){strsplit(x,'|',fixed=T)[[1]][4]})
 variants$Protein_position=sapply(CSQ, function(x){strsplit(x,'|',fixed=T)[[1]][15]})
 variants$Amino_acids=sapply(CSQ, function(x){strsplit(x,'|',fixed=T)[[1]][16]})
+
 # Open a table curated to focus only into those variants that are going to be part of the structure, removing those placed in the signal peptide.
-df=read.delim('./OxPhos.annotation.tsv', sep = '\t',header = T,stringsAsFactors = F)
+df=read.delim(<'/path_to/OxPhos.annotation.tsv'>, sep = '\t',header = T,stringsAsFactors = F)
 structural.filter=sapply(1:nrow(variants), function(x){return(ifelse(variants$Protein_position[x] < df$First_AA[which(df$ensembl_gene_id == variants$Gene[x])],yes = FALSE, no = TRUE))})
 variants=variants[structural.filter,]
 gt=gt[structural.filter,]
@@ -76,9 +79,7 @@ l1=list(cox5a='ENSG00000178741',cox5b="ENSG00000135940",cox6c="ENSG00000164919",
         ndufa4=c("ENSG00000185633","ENSG00000189043"), Sub6a=c("ENSG00000111775","ENSG00000156885"),Sub6b=c("ENSG00000126267","ENSG00000160471"),
         Sub7a=c("ENSG00000112695","ENSG00000115944","ENSG00000161281"),Sub8=c("ENSG00000176340","ENSG00000187581"),Sub7b=c("ENSG00000170516","ENSG00000131174"))
 
-
 CIV.combinations=do.call(expand.grid, l1)
-
 CIV.mat=matrix(1,ncol = ncol(CIV),nrow = nrow(CIV.combinations))
 
 for (c in 1:nrow(CIV.combinations)){
@@ -87,7 +88,6 @@ for (c in 1:nrow(CIV.combinations)){
     CIV.mat[c,i]=2**length(v[v==i])
   }
 }
-
 results.CIV=table(colSums(CIV.mat))
 
 # Calculate the potential number of different versions of CV monomer.
