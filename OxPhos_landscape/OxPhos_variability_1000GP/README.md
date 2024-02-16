@@ -15,8 +15,8 @@ Install R with the following packages:
 
 This script takes two input files, also included in the folder:
 
-1- A vcf.gz file including third phase missense variants from 1000 genome project, that affects to canonical transcripts.
-2- A tsv file used to annotate variants, with gene symbol (intended to unify ATP-synthase nomenclature), startin aa included in the final structure according to Uniprot scifications (3).
+1. A vcf.gz file including third phase missense variants from 1000 genome project, that affects to canonical transcripts.
+2. A tsv file used to annotate variants, with gene symbol (intended to unify ATP-synthase nomenclature), startin aa included in the final structure according to Uniprot scifications (3).
 
 ## References
 
