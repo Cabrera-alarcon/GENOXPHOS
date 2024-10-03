@@ -12,7 +12,7 @@ An app powered by shiny (https://shiny.posit.co/) to do mitochondrial haplogroup
 ## Analysis of HGs as independent risk factors
 
 We evaluate the potential of haplogroups (HGs) as independent risk factors for the severity of SARS-CoV-2. Severe disease was defined as cases with a fatal outcome, admission to the ICU, or the need for mechanical ventilation (invasive or non-invasive). HGs assessed were those that were represented in at least 1% o the patients used in the study. In addition HGs H, V, and HV were grouped under the HV branch, given that they share same residue changes determined by top-level HG-markers (present in ≥80% of HGs).
-We then assessed the explanatory significance of HGs for SARS-CoV-2 severity in two groups:<br><br>
+Then we assessed the explanatory significance of HGs for SARS-CoV-2 severity in two groups:<br><br>
 1. The script Analysis_1_scourge.R study the role of mitochondrial HGs as risk facro of severity in the SCOURGE cohort (group with comorbidity data available). Here we analyze mitochondrial HGs as independent risk factors of SARS-CoV-2 severity from comorbidities, sex, age and genetic background.<br><br>
 2. The Analysis_2_all_patients.R script explores HG as an independent risk factor in all patients, cosidering sex, age and genetic background (here comorbidity data were not available for all individuals).<br><br>
 ## Contact: 
