@@ -8,7 +8,14 @@ We developed a custom method for mitochondrial haplogroup (HG) calling from GWAS
 
 <br><br>
 Trained model is available as HG_caller.rds.<br><br>
-An app powered by shiny (https://shiny.posit.co/) to do mitochondrial haplogroup calling from GWAS array data will be available here soon.
+An app powered by shiny (https://shiny.posit.co/) to do mitochondrial haplogroup calling from GWAS array data is available here as HG_caller_v1.0.tar.gz. This app runs in R version 4.4.1 and the following R-packages:
+* caret
+* dplyr
+* irr
+* ggplot2
+* shiny
+* shinyFiles
+* shinythemes
 
 ## Analysis of HGs as independent risk factors
 
