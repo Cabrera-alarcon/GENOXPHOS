@@ -23,6 +23,14 @@ We evaluate the potential of haplogroups (HGs) as independent risk factors for t
 Then, we assessed the explanatory significance of HGs for SARS-CoV-2 severity in two groups:<br><br>
 1. The script Analysis_1_scourge.R study the role of mitochondrial HGs as risk facro of severity in the SCOURGE cohort (group with comorbidity data available). Here we analyze mitochondrial HGs as independent risk factors of SARS-CoV-2 severity from comorbidities, sex, age and genetic background.<br><br>
 2. The Analysis_2_all_patients.R script explores HG as an independent risk factor in all patients, cosidering sex, age and genetic background (here comorbidity data were not available for all individuals).<br><br>
+## Citation
+
+If you use this program in your research, please cite the following publication:
+
+Cabrera-Alarcon JL, Cruz R, Rosa-Moreno M, Latorre-Pellicer A, de Almeida SD; Scourge Cohort Group; Riancho JA, Rojas-Martinez A, Flores C, Lapunzina P, Sánchez-Cabo F, Carracedo Á, Enriquez JA.  
+**Shaping current European mitochondrial haplogroup frequency in response to infection: the case of SARS-CoV-2 severity.**  
+*Commun Biol.* 2025 Jan 9;8(1):33. doi: [10.1038/s42003-024-07314-y](https://doi.org/10.1038/s42003-024-07314-y). PMID: 39789223.
+individuals).<br><br>
 ## Contact: 
 jaenriquez@cnic.es or jlcabreraa@cnic.es 
 
